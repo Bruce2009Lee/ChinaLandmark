@@ -34,7 +34,7 @@ let landmarks = [
     Landmark(id: 1, category: "古迹", name: "天安门", city: "北京", province: "北京市", latitude: 39.9087243, longtitude: 116.3952859, imageName: "tiananmen", isFavourite: true, isFeatured: true),
     Landmark(id: 2, category: "现代建筑", name: "故宫", city: "北京", province: "北京市", latitude: 59.9087243, longtitude: 116.3952859, imageName: "gugong", isFavourite: true, isFeatured: true),
     Landmark(id: 3, category: "古迹", name: "圆明园", city: "北京", province: "北京市", latitude: 69.9087243, longtitude: 116.3952859, imageName: "yuanmingyuan", isFavourite: true, isFeatured: true),
-    Landmark(id: 4, category: "现在建筑", name: "gray", city: "北京", province: "北京市", latitude: 99.9087243, longtitude: 116.3952859, imageName: "gray40", isFavourite: true, isFeatured: true)
+    Landmark(id: 4, category: "现在建筑", name: "gray", city: "北京", province: "北京市", latitude: 19.9087243, longtitude: 116.3952859, imageName: "gray40", isFavourite: true, isFeatured: true)
     
 ]
 

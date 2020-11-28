@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    
+    
+    let item : Landmark
+    
     var body: some View {
         
         VStack{
-            MapView()
+            MapView(center: item.locationCoordinate)
                 //忽略顶端的安全区
                 .edgesIgnoringSafeArea(.top)
                 .frame(height:500)
 
-            Image("baidu250")
+            Image(item.imageName)
+                .resizable()
+                .frame(width: 250, height: 250, alignment: .center)
                 //裁剪成圆形的view
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/, style: FillStyle())
                 // 描边，stroke 抽空
@@ -29,18 +35,18 @@ struct LandmarkDetail: View {
                 .padding(.bottom,-130)
             
             VStack(alignment: .leading, spacing: 8){
-                Text("东方明珠").font(.title)
+                Text(item.name).font(.title)
                 HStack{
-                    Text("上海").font(.subheadline)
+                    Text(item.city).font(.subheadline)
                     // 水平布局中，把2个对象推开
                     Spacer()
-                    Text("上海市").font(.subheadline)
+                    Text(item.province).font(.subheadline)
                 }
             }.padding()
         
             Spacer()
             
-        }.navigationBarTitle(Text("tiananmen"),displayMode: .inline)
+        }.navigationBarTitle(Text(item.name),displayMode: .inline)
         
         
     }
@@ -49,7 +55,7 @@ struct LandmarkDetail: View {
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LandmarkDetail()
+            LandmarkDetail(item: landmarks[0])
         }
     }
 }
