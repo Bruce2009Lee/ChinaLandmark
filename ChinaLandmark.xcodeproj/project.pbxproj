@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F28DF28225725566009CA004 /* ChinaLandmarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28DF28125725566009CA004 /* ChinaLandmarkApp.swift */; };
-		F28DF28425725566009CA004 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28DF28325725566009CA004 /* ContentView.swift */; };
+		F28DF28425725566009CA004 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28DF28325725566009CA004 /* LandmarkDetail.swift */; };
 		F28DF28625725568009CA004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28DF28525725568009CA004 /* Assets.xcassets */; };
 		F28DF28925725568009CA004 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28DF28825725568009CA004 /* Preview Assets.xcassets */; };
+		F2C3660A25726BD700FCBEB8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3660925726BD700FCBEB8 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F28DF27E25725566009CA004 /* ChinaLandmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinaLandmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28DF28125725566009CA004 /* ChinaLandmarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaLandmarkApp.swift; sourceTree = "<group>"; };
-		F28DF28325725566009CA004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F28DF28325725566009CA004 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		F28DF28525725568009CA004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F28DF28825725568009CA004 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F28DF28A25725568009CA004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2C3660925726BD700FCBEB8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				F28DF28125725566009CA004 /* ChinaLandmarkApp.swift */,
-				F28DF28325725566009CA004 /* ContentView.swift */,
+				F28DF28325725566009CA004 /* LandmarkDetail.swift */,
+				F2C3660925726BD700FCBEB8 /* MapView.swift */,
 				F28DF28525725568009CA004 /* Assets.xcassets */,
 				F28DF28A25725568009CA004 /* Info.plist */,
 				F28DF28725725568009CA004 /* Preview Content */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F28DF28425725566009CA004 /* ContentView.swift in Sources */,
+				F28DF28425725566009CA004 /* LandmarkDetail.swift in Sources */,
+				F2C3660A25726BD700FCBEB8 /* MapView.swift in Sources */,
 				F28DF28225725566009CA004 /* ChinaLandmarkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.apps.ChinaLandmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +306,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.apps.ChinaLandmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
