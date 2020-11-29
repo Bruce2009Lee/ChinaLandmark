@@ -20,6 +20,12 @@ struct LandmarkCell: View {
                 .cornerRadius(12)
             Text(lland.name)
             Spacer()
+            if lland.isFavourite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+                    .imageScale(.medium)
+                    .padding()
+            }
         }
     }
 }
