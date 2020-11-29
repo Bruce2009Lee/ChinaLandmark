@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LandmarkDetail: View {
     
-    
     let item : Landmark
     
     @EnvironmentObject
     var userData:UserData
     
+    // 计算属性
     var landmarkIndex : Int {
         userData.userLandmarks.firstIndex(where: {
             $0.id == item.id
@@ -24,11 +24,13 @@ struct LandmarkDetail: View {
     var body: some View {
         
         VStack{
+            // 地图
             MapView(center: item.locationCoordinate)
                 //忽略顶端的安全区
                 .edgesIgnoringSafeArea(.top)
                 .frame(height:500)
 
+            // 圆形标志图
             Image(item.imageName)
                 .resizable()
                 .frame(width: 250, height: 250, alignment: .center)
@@ -48,12 +50,13 @@ struct LandmarkDetail: View {
                     Text(item.name).font(.title)
                     Button(action: {
                         self.userData.userLandmarks[self.landmarkIndex].isFavourite.toggle()
-                    }, label: {
+                    }) {
                         if self.userData.userLandmarks[self.landmarkIndex].isFavourite{
                             Image(systemName: "star.fill").foregroundColor(.yellow)
+                        } else{
+                            Image(systemName: "star").foregroundColor(.gray)
                         }
-                        Image(systemName: "star").foregroundColor(.gray)
-                    })
+                    }
                 }
                 
                 HStack{

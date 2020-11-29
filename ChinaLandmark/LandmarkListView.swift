@@ -14,30 +14,6 @@ struct LandmarkListView: View {
             
             ExtractedView().environmentObject(UserData())
         }
-        
-       
-    }
-}
-
-struct LandmarkListView_Previews: PreviewProvider {
-    static var previews: some View {
-//        Group{
-//            LandmarkListView()
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-//                .previewDisplayName(deviceName)
-//            LandmarkListView()
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 8")))
-//                .previewDisplayName(deviceName)
-//        }
-        
-        // List 对象必须加 标识符
-        ForEach(["iPhone 11"], id: \.self){ deviceName in
-            LandmarkListView()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
-
-        }.environmentObject(UserData())
-        
     }
 }
 
@@ -61,8 +37,9 @@ struct ExtractedView: View {
             ForEach(userData.userLandmarks){ item in
                 // 逻辑或的短路效果；和上面的效果相同
                 if !self.showFavOnly || item.isFavourite {
-                    NavigationLink(destination: LandmarkDetail(item: item)){
-                        LandmarkCell(lland: item).environmentObject(userData)
+                    NavigationLink(destination:
+                                    LandmarkDetail(item: item).environmentObject(self.userData)){
+                        LandmarkCell(lland: item)
                     }
                 }
                 
@@ -70,5 +47,28 @@ struct ExtractedView: View {
             
         }
         .navigationBarTitle(Text("中国地标"))
+    }
+}
+
+
+struct LandmarkListView_Previews: PreviewProvider {
+    static var previews: some View {
+//        Group{
+//            LandmarkListView()
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//                .previewDisplayName(deviceName)
+//            LandmarkListView()
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 8")))
+//                .previewDisplayName(deviceName)
+//        }
+        
+        // List 对象必须加 标识符
+        ForEach(["iPhone 11"], id: \.self){ deviceName in
+            LandmarkListView()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+
+        }.environmentObject(UserData())
+        
     }
 }

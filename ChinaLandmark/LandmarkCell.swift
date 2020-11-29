@@ -14,10 +14,12 @@ struct LandmarkCell: View {
     var body: some View {
     
         HStack{
+            //logo
             Image(lland.imageName)
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .center)
                 .cornerRadius(12)
+            // 
             Text(lland.name)
             Spacer()
             if lland.isFavourite {
