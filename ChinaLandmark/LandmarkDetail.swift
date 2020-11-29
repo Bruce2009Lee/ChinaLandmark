@@ -12,6 +12,15 @@ struct LandmarkDetail: View {
     
     let item : Landmark
     
+    @EnvironmentObject
+    var userData:UserData
+    
+    var landmarkIndex : Int {
+        userData.userLandmarks.firstIndex(where: {
+            $0.id == item.id
+        })!
+    }
+    
     var body: some View {
         
         VStack{
@@ -35,7 +44,18 @@ struct LandmarkDetail: View {
                 .padding(.bottom,-130)
             
             VStack(alignment: .leading, spacing: 8){
-                Text(item.name).font(.title)
+                HStack{
+                    Text(item.name).font(.title)
+                    Button(action: {
+                        self.userData.userLandmarks[self.landmarkIndex].isFavourite.toggle()
+                    }, label: {
+                        if self.userData.userLandmarks[self.landmarkIndex].isFavourite{
+                            Image(systemName: "star.fill").foregroundColor(.yellow)
+                        }
+                        Image(systemName: "star").foregroundColor(.gray)
+                    })
+                }
+                
                 HStack{
                     Text(item.city).font(.subheadline)
                     // 水平布局中，把2个对象推开
@@ -55,7 +75,7 @@ struct LandmarkDetail: View {
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LandmarkDetail(item: landmarks[0])
-        }
+            LandmarkDetail(item: landmarks[1])
+        }.environmentObject(UserData())
     }
 }
