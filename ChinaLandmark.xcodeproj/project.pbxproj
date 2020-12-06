@@ -44,6 +44,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F211313E25736C06003654AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F211313F25736C19003654AA /* Soupporting Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Soupporting Views";
+			sourceTree = "<group>";
+		};
 		F28DF27525725566009CA004 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +78,8 @@
 		F28DF28025725566009CA004 /* ChinaLandmark */ = {
 			isa = PBXGroup;
 			children = (
+				F211313F25736C19003654AA /* Soupporting Views */,
+				F211313E25736C06003654AA /* Resources */,
 				F28DF28125725566009CA004 /* ChinaLandmarkApp.swift */,
 				F28DF28325725566009CA004 /* LandmarkDetail.swift */,
 				F2C3661C25727BC000FCBEB8 /* LandmarkCell.swift */,
