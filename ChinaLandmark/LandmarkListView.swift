@@ -12,7 +12,7 @@ struct LandmarkListView: View {
     var body: some View {
         NavigationView{
             
-            ExtractedView().environmentObject(UserData())
+            ExtractedView(userData: UserData())
         }
     }
 }
@@ -23,7 +23,7 @@ struct ExtractedView: View {
     private var showFavOnly = false
     
     // 页面用了EnvironmentObject，类似于某个页面用了state 属性
-    @EnvironmentObject
+    @ObservedObject
     var userData: UserData
     
     var body: some View {
@@ -38,7 +38,7 @@ struct ExtractedView: View {
                 // 逻辑或的短路效果；和上面的效果相同
                 if !self.showFavOnly || item.isFavourite {
                     NavigationLink(destination:
-                                    LandmarkDetail(item: item).environmentObject(self.userData)){
+                                    LandmarkDetail(item: item,userData: userData)){
                         LandmarkCell(lland: item)
                     }
                 }

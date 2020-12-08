@@ -11,7 +11,7 @@ struct LandmarkDetail: View {
     
     let item : Landmark
     
-    @EnvironmentObject
+    @ObservedObject
     var userData:UserData
     
     // 计算属性
@@ -78,7 +78,7 @@ struct LandmarkDetail: View {
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LandmarkDetail(item: landmarks[1])
-        }.environmentObject(UserData())
+            LandmarkDetail(item: landmarks[1],userData: UserData())
+        }
     }
 }
